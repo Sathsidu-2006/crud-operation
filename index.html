@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+    <div>
+        <input type="text" placeholder="Enter the ID" id="txtId">
+        <br><br>
+        <input type="text" placeholder="Enter the Name" id="txtName">
+        <br><br>
+        <input type="text" placeholder="Age" id="txtAge">
+        <br><br>
+        <input type="text" placeholder="Address" id="txtAddress">
+        <br><br>
+        <input type="submit" value="ADD CUSTOMER" onclick="btnAddCustomer()">
+        <br><br>
+        <input type="submit" value="UPDATE CUSTOMER" onclick="btnUpdateCustomer()">
+        <br><br>
+        <input type="submit" value="SEARCH CUSTOMER" onclick="btnSearchCustomer()">
+        <br><br>
+        <input type="submit" value="DELETE CUSTOMER" onclick="btnDeleteCustomer()">
+    </div>
+    <br><br>
+
+    <div>
+        <table border="1" id="tableDetail">
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Customer Age</th>
+                <th>Customer Address</th>
+            </tr>
+        </table>
+        <br><br>
+
+        <input type="submit" value="Load Table" onclick="btnLoadTableOnAction()">
+
+    </div>
+
+    <script src="js/app.js"></script>
 </body>
+
 </html>

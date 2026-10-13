@@ -26,24 +26,31 @@ function btnAddCustomer(){
 
 }
 
-function btnUpdateCustomer(){
+function btnAddStudent() {
 
-    let id = document.getElementById("txtId").value ;
+    let checkId = document.getElementById("txtId").value.trim();
 
-    let customer = customerList.find(c => c.id===id);
+    if(checkId === ""){
+        alert("No Values Entered");
 
-    if(customer){
-        customer.name = document.getElementById("txtName").value ;
-        customer.age = document.getElementById("txtAge").value;
-        customer.address = document.getElementById("txtAddress").value ;
+    }else if(studentList.some(student => student.id === checkId)) {
+        alert("Student ID Already Exists");
 
-        localStorage.setItem("customerList", JSON.stringify(customerList));
-        btnLoadTableOnAction();
     }else{
-        alert("customer Not Found");
-    }
 
-    
+        let student = {
+            id: checkId,
+            name: document.getElementById("txtName").value,
+            age: document.getElementById("txtAge").value,
+            address: document.getElementById("txtAddress").value
+        };
+
+        studentList.push(student);
+
+        localStorage.setItem("studentList", JSON.stringify(studentList));
+
+        alert("Student Added Successfully...");
+    }
 }
 
 function btnSearchCustomer(){
